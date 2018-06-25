@@ -1,0 +1,30 @@
+export declare class TeamS {
+    static getTeam(teamId: any): Promise<{}>;
+    static getTeamIdList(userId: any): Promise<number[]>;
+    static getMemberIdList(teamId: any): Promise<{}>;
+    static getMyTeams(userId: number, offset?: number, limit?: number, name?: string): Promise<any>;
+    static searchTeams(userId: number, offset?: number, limit?: number, name?: string): Promise<any>;
+    static getTeamMembers(userId: number, teamId: any, offset?: number, limit?: number): Promise<any>;
+    static getTeamAnnouncement(teamId: any, userId: any, offset?: number, limit?: number, lastAnnId?: any): Promise<{}>;
+    static getUnseenTeamAnnouncement(teamId: any, userId: any, limit?: number): Promise<{}>;
+    static getTeamProjects(teamId: any, offset: number, limit: number): Promise<{}>;
+    static announceAndReply(teamId: any, userId: any, message: string, mainAnnouncementId?: any): Promise<{}>;
+    static reply(userId: any, teamId: number, message: string, mainAnnouncementId: any): Promise<{}>;
+    static updateAnnouncementSeen(teamId: any, userId: any, lastSeenAnnId: any): any;
+    static newTeam(teamData: any): any;
+    static editTeamProfile(teamId: number, teamData: any): any;
+    static deleteTeam(teamId: number): any;
+    static addTeamMember(teamId: number, memberIds: number[]): any;
+    static removeTeamMember(teamId: number, userId: number[]): any;
+    static replyTeamJoinRequest(requestId: any, decision: any): any;
+    static editAnnouncementReply(announcementId: number, newAnnouncement: string): any;
+    static removeAnnouncement(announcementId: number): any;
+    static removeReply(replyId: number): any;
+    static getLastAnnIds(userId: any): Promise<{}>;
+    static getUnseenAnnouncements(userId: any, limit?: number): Promise<{}>;
+    static getUnseenTeamJoinRequests(userId: any): Promise<{}>;
+    static checkTeamMembership(userId: any, teamId: any): Promise<boolean>;
+    static checkTeamLeadership(userId: any, teamId: any): Promise<boolean>;
+    static checkAnnouncementOrReplyOwnership(userId: number, annId: number): Promise<boolean>;
+    static checkTeamJoinRequestReceiver(userId: number, requestId: number): Promise<boolean>;
+}

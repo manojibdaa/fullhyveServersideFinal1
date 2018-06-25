@@ -1,0 +1,32 @@
+export declare class TeamDb {
+    static getTeam(teamId: any): Promise<any>;
+    static getLeaderTeam(userId: any): any;
+    static getUserTeam(userId: any): any;
+    static getMembersId(teamId: any): any;
+    static getTeamsDetail(teamsId: number[], nameCriteria: string): any;
+    static getTeamMembers(memberIds: any): any;
+    static getTeamAnnouncement(teamsId: any, lastAnnId?: any): any;
+    static getLastAnnId(teamId: any, userId: any): any;
+    static getMemberTeams(userId: number, nameCriteria?: string): any;
+    static getLeaderTeams(userId: number, nameCriteria?: string): any;
+    static getPublicTeams(teamIds: number[], nameCriteria?: string): any;
+    static announce(teamId: any, userId: any, message: string, mainAnnouncementId?: any): any;
+    static reply(userId: number, teamId: number, message: string, mainAnnouncementId: any): any;
+    static updateAnnouncementSeen(teamId: any, userId: any, lastAnnId: any): any;
+    static newTeam(teamData: any): any;
+    static addTeamMembers(memberData: any): any;
+    static removeTeamMember(teamId: number, memberId: number[]): any;
+    static replyTeamJoinRequest(requestId: any, decision: string): any;
+    static getUnseenNotificationAnnouncements(teamsId: any): any;
+    static getLastAnnIds(userId: any): any;
+    static getUnseenTeamJoinRequests(userId: any): any;
+    static getTeams(teamsId: any): any;
+    static editTeamProfile(teamId: number, teamData: any): any;
+    static editAnnouncementReply(announcementId: number, newAnnouncement: string): any;
+    static removeAnnouncementReply(announcementId: number, mainAnnouncementId?: any): any;
+    static deleteTeam(teamId: number): any;
+    static checkTeamLeadership(userId: number, teamId: number): any;
+    static checkTeamMembership(userId: number, teamId: number): any;
+    static checkAnnouncementOrReplyOwnership(userId: number, annId: number): any;
+    static checkTeamJoinRequestReceiver(userId: number, requestId: number): any;
+}
