@@ -1,9 +1,10 @@
 # Fullhyve server side
 ------------------------------------------------------------------------------
 
-Commands -> npm run start  -- to compile the typescript code and save the output in the dist folder
-         -> nodemon index.js -- in the dist folder to start the server
-         -> npm test -- to run the tests
+Commands
+  * npm run start  -- to compile the typescript code and save the output in the dist folder
+  * nodemon index.js -- in the dist folder to start the server
+  * npm test -- to run the tests
 
 Before running the test
   * Database is already uploaded on gearhost free hosting site but if local database setup 
