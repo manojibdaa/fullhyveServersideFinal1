@@ -34,7 +34,7 @@ export class TeamS{
             .then((teamIds:any)=>{
                 if(teamIds.length>0){
                     for(let i of teamIds){
-                        teamIdsReturn.push(i.get('id'));
+                        teamIdsReturn.push(i.id);
                     }
                 }
                 return TeamDb.getUserTeam(userId);
@@ -43,7 +43,7 @@ export class TeamS{
             .then((teamIds:any)=>{
                 if(teamIds.length>0){
                     for(let i of teamIds){
-                        teamIdsReturn.push(i.get('teamId'));
+                        teamIdsReturn.push(i.teamId);
                     }
                 }
                 
@@ -61,7 +61,7 @@ export class TeamS{
 
                 for(let i of memberIds.members){
                     if(i.TeamUsers.request == UserConst.REQUEST.ACCEPTED){
-                        memberIdsReturn.push(i.get('id'));
+                        memberIdsReturn.push(i.id);
                     }
                     console.log();
                     
@@ -234,10 +234,7 @@ export class TeamS{
             TeamDb.reply(userId,teamId, message,mainAnnouncementId)
             
             .then((announcement:any)=>{
-                console.log("Announcement***************************************************************");
-                console.log(announcement);
                 let newAnnouncement:any = UtilMethods.getNewAnnouncementAttr(announcement,userId);
-                console.log(newAnnouncement);
                 resolve(newAnnouncement);
             });
         })
@@ -263,7 +260,6 @@ export class TeamS{
             }
             // let teamMembers:any = [];
             // let members:any = teamData.members;
-
             // for(let member of members){
             //     teamMembers.push({
             //         userId:member,
@@ -271,7 +267,6 @@ export class TeamS{
             //     })
             // }
             // return TeamDb.addTeamMembers(teamMembers);
-
             return null;
         })
     }
@@ -410,7 +405,6 @@ export class TeamS{
 
 
     // Authorization
-
     static checkTeamMembership(userId:any, teamId:any):Promise<boolean>{
         return new Promise((resolve, reject)=>{
             Promise.all([TeamDb.checkTeamLeadership(userId, teamId), TeamDb.checkTeamMembership(userId, teamId)])
@@ -468,4 +462,3 @@ export class TeamS{
         })
     }    
 }
-

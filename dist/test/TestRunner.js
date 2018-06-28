@@ -60,7 +60,7 @@ function emitListen(act, rTestData) {
         });
     });
 }
-describe("Fullhyve project test", function () {
+describe("Fullhyve route test", function () {
     this.timeout(5000);
     before(function () {
         conn = io.connect('http://localhost:8000/chat', { forceNew: true });

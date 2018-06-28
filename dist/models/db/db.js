@@ -2,18 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Sequelize = require("sequelize");
 var dbModels_1 = require("./dbModels");
-var sequelize = new Sequelize('projecttracker', 'projecttracker', 'Fj7G6i-~4Vfx', {
-    host: 'den1.mysql2.gear.host',
-    dialect: 'mysql',
-    pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-    }
-});
-// const sequelize = new Sequelize('projecttrackertest', 'root', '', {
-//     host: 'localhost',
+// const sequelize = new Sequelize('projecttracker', 'projecttracker', 'Fj7G6i-~4Vfx', {
+//     host: 'den1.mysql2.gear.host',
 //     dialect: 'mysql',
 //     pool: {
 //       max: 5,
@@ -22,6 +12,16 @@ var sequelize = new Sequelize('projecttracker', 'projecttracker', 'Fj7G6i-~4Vfx'
 //       idle: 10000
 //     }
 //   });
+var sequelize = new Sequelize('projecttrackertest', 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql',
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    }
+});
 sequelize
     .authenticate()
     .then(function () {

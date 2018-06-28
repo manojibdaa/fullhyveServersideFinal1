@@ -44,15 +44,8 @@ var MainServer = /** @class */ (function () {
             res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
             next();
         });
-        // this.app.use('/account', AccountR.init());
-        // // authentication and validation
-        // this.app.use(Authentication.verifyToken);
-        // this.app.use(Validation.validate);
-        // this.app.use("/chat", ChatR.init());
-        // this.app.use("/team", TeamR.init());
-        // this.app.use('/project', ProjectR.init());
         this.app.use('/file', uploadRoute_1.UploadR.init());
-        //perform test
+        // uncomment to initialize database with seed data
         // MainTest.init();
     };
     MainServer.PORT = 8000;

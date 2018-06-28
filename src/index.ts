@@ -6,11 +6,7 @@ import * as bodyParser from "body-parser";
 import { MainTest } from './test/mainTest';
 import { Validation } from "./models/util/validate";
 import { RealtimeServer } from './controllers/realtimeServer';
-import {ChatR} from './controllers/chatRoute';
-import { TeamR } from './controllers/teamRoute';
-import { ProjectR } from './controllers/projectRoute';
 import { UploadR } from './controllers/uploadRoute';
-import { AccountR } from './controllers/userRoute';
 
 export class MainServer {
   public static readonly PORT: number = 8000;
@@ -66,18 +62,9 @@ export class MainServer {
       next();
     });
 
-    // this.app.use('/account', AccountR.init());
-
-    // // authentication and validation
-    // this.app.use(Authentication.verifyToken);
-    // this.app.use(Validation.validate);
-
-    // this.app.use("/chat", ChatR.init());
-    // this.app.use("/team", TeamR.init());
-    // this.app.use('/project', ProjectR.init());
     this.app.use('/file', UploadR.init());
 
-    //perform test
+    // uncomment to initialize database with seed data
     // MainTest.init();
   }
 }

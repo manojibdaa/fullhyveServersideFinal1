@@ -30,7 +30,7 @@ var TeamS = /** @class */ (function () {
                 if (teamIds.length > 0) {
                     for (var _i = 0, teamIds_1 = teamIds; _i < teamIds_1.length; _i++) {
                         var i = teamIds_1[_i];
-                        teamIdsReturn.push(i.get('id'));
+                        teamIdsReturn.push(i.id);
                     }
                 }
                 return teamDb_1.TeamDb.getUserTeam(userId);
@@ -39,7 +39,7 @@ var TeamS = /** @class */ (function () {
                 if (teamIds.length > 0) {
                     for (var _i = 0, teamIds_2 = teamIds; _i < teamIds_2.length; _i++) {
                         var i = teamIds_2[_i];
-                        teamIdsReturn.push(i.get('teamId'));
+                        teamIdsReturn.push(i.teamId);
                     }
                 }
                 resolve(teamIdsReturn);
@@ -54,7 +54,7 @@ var TeamS = /** @class */ (function () {
                 for (var _i = 0, _a = memberIds.members; _i < _a.length; _i++) {
                     var i = _a[_i];
                     if (i.TeamUsers.request == constant_1.UserConst.REQUEST.ACCEPTED) {
-                        memberIdsReturn.push(i.get('id'));
+                        memberIdsReturn.push(i.id);
                     }
                     console.log();
                 }
@@ -206,10 +206,7 @@ var TeamS = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             teamDb_1.TeamDb.reply(userId, teamId, message, mainAnnouncementId)
                 .then(function (announcement) {
-                console.log("Announcement***************************************************************");
-                console.log(announcement);
                 var newAnnouncement = util_1.UtilMethods.getNewAnnouncementAttr(announcement, userId);
-                console.log(newAnnouncement);
                 resolve(newAnnouncement);
             });
         });

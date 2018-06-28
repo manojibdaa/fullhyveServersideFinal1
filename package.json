@@ -8,7 +8,7 @@
     "start": "tsc-watch",
     "build:live": "nodemon --exec tsc -w -- ./src/index.ts",
     "build": "tsc -w",
-    "test": "mocha ./dist/test/TestRunner.js"
+    "test": "mocha spec ./dist/test/ServicesTest.js ./dist/test/TestRunner.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
