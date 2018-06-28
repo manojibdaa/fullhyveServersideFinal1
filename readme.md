@@ -16,8 +16,6 @@ Before running the test
 
   * Start the server using 'nodemon index.js'
 
-  * Run the test using 'npm test'
-
 Route Test
   * TestData.ts contains the input data and expected output for every action/task.
   * TestRunner.ts contains the main methods that use the data in the TestData.ts and perform the tests.
@@ -27,3 +25,5 @@ Route Test
 
 Unit Test
   * servicesTest.ts contains the tests for the team services and project services.
+
+Use npm test to run both unit and route test
